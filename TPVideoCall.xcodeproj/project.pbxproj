@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */; };
+		FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */; };
+		FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F7283B6AB000AE9482 /* ViewController.swift */; };
+		FEBD59FB283B6AB000AE9482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD59F9283B6AB000AE9482 /* Main.storyboard */; };
+		FEBD59FD283B6AB200AE9482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBD59FC283B6AB200AE9482 /* Assets.xcassets */; };
+		FEBD5A00283B6AB200AE9482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD59FE283B6AB200AE9482 /* LaunchScreen.storyboard */; };
+		FEBD5A0B283B6AB300AE9482 /* TPVideoCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A0A283B6AB300AE9482 /* TPVideoCallTests.swift */; };
+		FEBD5A15283B6AB300AE9482 /* TPVideoCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */; };
+		FEBD5A17283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FEBD5A07283B6AB300AE9482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEBD59E8283B6AB000AE9482 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBD59EF283B6AB000AE9482;
+			remoteInfo = TPVideoCall;
+		};
+		FEBD5A11283B6AB300AE9482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEBD59E8283B6AB000AE9482 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBD59EF283B6AB000AE9482;
+			remoteInfo = TPVideoCall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPVideoCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FEBD59F7283B6AB000AE9482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEBD59FA283B6AB000AE9482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEBD59FC283B6AB200AE9482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEBD59FF283B6AB200AE9482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEBD5A01283B6AB200AE9482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBD5A06283B6AB300AE9482 /* TPVideoCallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPVideoCallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBD5A0A283B6AB300AE9482 /* TPVideoCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallTests.swift; sourceTree = "<group>"; };
+		FEBD5A10283B6AB300AE9482 /* TPVideoCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPVideoCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITests.swift; sourceTree = "<group>"; };
+		FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEBD59ED283B6AB000AE9482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A03283B6AB300AE9482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A0D283B6AB300AE9482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEBD59E7283B6AB000AE9482 = {
+			isa = PBXGroup;
+			children = (
+				FEBD59F2283B6AB000AE9482 /* TPVideoCall */,
+				FEBD5A09283B6AB300AE9482 /* TPVideoCallTests */,
+				FEBD5A13283B6AB300AE9482 /* TPVideoCallUITests */,
+				FEBD59F1283B6AB000AE9482 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEBD59F1283B6AB000AE9482 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */,
+				FEBD5A06283B6AB300AE9482 /* TPVideoCallTests.xctest */,
+				FEBD5A10283B6AB300AE9482 /* TPVideoCallUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEBD59F2283B6AB000AE9482 /* TPVideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */,
+				FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */,
+				FEBD59F7283B6AB000AE9482 /* ViewController.swift */,
+				FEBD59F9283B6AB000AE9482 /* Main.storyboard */,
+				FEBD59FC283B6AB200AE9482 /* Assets.xcassets */,
+				FEBD59FE283B6AB200AE9482 /* LaunchScreen.storyboard */,
+				FEBD5A01283B6AB200AE9482 /* Info.plist */,
+			);
+			path = TPVideoCall;
+			sourceTree = "<group>";
+		};
+		FEBD5A09283B6AB300AE9482 /* TPVideoCallTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD5A0A283B6AB300AE9482 /* TPVideoCallTests.swift */,
+			);
+			path = TPVideoCallTests;
+			sourceTree = "<group>";
+		};
+		FEBD5A13283B6AB300AE9482 /* TPVideoCallUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */,
+				FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */,
+			);
+			path = TPVideoCallUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEBD59EF283B6AB000AE9482 /* TPVideoCall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBD5A1A283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCall" */;
+			buildPhases = (
+				FEBD59EC283B6AB000AE9482 /* Sources */,
+				FEBD59ED283B6AB000AE9482 /* Frameworks */,
+				FEBD59EE283B6AB000AE9482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TPVideoCall;
+			productName = TPVideoCall;
+			productReference = FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEBD5A05283B6AB300AE9482 /* TPVideoCallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBD5A1D283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCallTests" */;
+			buildPhases = (
+				FEBD5A02283B6AB300AE9482 /* Sources */,
+				FEBD5A03283B6AB300AE9482 /* Frameworks */,
+				FEBD5A04283B6AB300AE9482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEBD5A08283B6AB300AE9482 /* PBXTargetDependency */,
+			);
+			name = TPVideoCallTests;
+			productName = TPVideoCallTests;
+			productReference = FEBD5A06283B6AB300AE9482 /* TPVideoCallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FEBD5A0F283B6AB300AE9482 /* TPVideoCallUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBD5A20283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCallUITests" */;
+			buildPhases = (
+				FEBD5A0C283B6AB300AE9482 /* Sources */,
+				FEBD5A0D283B6AB300AE9482 /* Frameworks */,
+				FEBD5A0E283B6AB300AE9482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEBD5A12283B6AB300AE9482 /* PBXTargetDependency */,
+			);
+			name = TPVideoCallUITests;
+			productName = TPVideoCallUITests;
+			productReference = FEBD5A10283B6AB300AE9482 /* TPVideoCallUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEBD59E8283B6AB000AE9482 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					FEBD59EF283B6AB000AE9482 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					FEBD5A05283B6AB300AE9482 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = FEBD59EF283B6AB000AE9482;
+					};
+					FEBD5A0F283B6AB300AE9482 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = FEBD59EF283B6AB000AE9482;
+					};
+				};
+			};
+			buildConfigurationList = FEBD59EB283B6AB000AE9482 /* Build configuration list for PBXProject "TPVideoCall" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEBD59E7283B6AB000AE9482;
+			productRefGroup = FEBD59F1283B6AB000AE9482 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEBD59EF283B6AB000AE9482 /* TPVideoCall */,
+				FEBD5A05283B6AB300AE9482 /* TPVideoCallTests */,
+				FEBD5A0F283B6AB300AE9482 /* TPVideoCallUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEBD59EE283B6AB000AE9482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBD5A00283B6AB200AE9482 /* LaunchScreen.storyboard in Resources */,
+				FEBD59FD283B6AB200AE9482 /* Assets.xcassets in Resources */,
+				FEBD59FB283B6AB000AE9482 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A04283B6AB300AE9482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A0E283B6AB300AE9482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEBD59EC283B6AB000AE9482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */,
+				FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */,
+				FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A02283B6AB300AE9482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBD5A0B283B6AB300AE9482 /* TPVideoCallTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBD5A0C283B6AB300AE9482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBD5A17283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift in Sources */,
+				FEBD5A15283B6AB300AE9482 /* TPVideoCallUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FEBD5A08283B6AB300AE9482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBD59EF283B6AB000AE9482 /* TPVideoCall */;
+			targetProxy = FEBD5A07283B6AB300AE9482 /* PBXContainerItemProxy */;
+		};
+		FEBD5A12283B6AB300AE9482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBD59EF283B6AB000AE9482 /* TPVideoCall */;
+			targetProxy = FEBD5A11283B6AB300AE9482 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FEBD59F9283B6AB000AE9482 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEBD59FA283B6AB000AE9482 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FEBD59FE283B6AB200AE9482 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEBD59FF283B6AB200AE9482 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEBD5A18283B6AB300AE9482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEBD5A19283B6AB300AE9482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEBD5A1B283B6AB300AE9482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TPVideoCall/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FEBD5A1C283B6AB300AE9482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TPVideoCall/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FEBD5A1E283B6AB300AE9482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TPVideoCall.app/TPVideoCall";
+			};
+			name = Debug;
+		};
+		FEBD5A1F283B6AB300AE9482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TPVideoCall.app/TPVideoCall";
+			};
+			name = Release;
+		};
+		FEBD5A21283B6AB300AE9482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TPVideoCall;
+			};
+			name = Debug;
+		};
+		FEBD5A22283B6AB300AE9482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TPVideoCall;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEBD59EB283B6AB000AE9482 /* Build configuration list for PBXProject "TPVideoCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBD5A18283B6AB300AE9482 /* Debug */,
+				FEBD5A19283B6AB300AE9482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEBD5A1A283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBD5A1B283B6AB300AE9482 /* Debug */,
+				FEBD5A1C283B6AB300AE9482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEBD5A1D283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBD5A1E283B6AB300AE9482 /* Debug */,
+				FEBD5A1F283B6AB300AE9482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEBD5A20283B6AB300AE9482 /* Build configuration list for PBXNativeTarget "TPVideoCallUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBD5A21283B6AB300AE9482 /* Debug */,
+				FEBD5A22283B6AB300AE9482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEBD59E8283B6AB000AE9482 /* Project object */;
+}
