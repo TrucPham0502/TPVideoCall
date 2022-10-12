@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE5FAAF028728D44000124F5 /* DockableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FAAEF28728D44000124F5 /* DockableController.swift */; };
+		FE89E3C7283B732400A8E78C /* H264Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89E3C6283B732400A8E78C /* H264Encoder.m */; };
+		FEB33291283B8A8D00D768C6 /* H264Decoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33290283B8A8D00D768C6 /* H264Decoder.m */; };
+		FEB33294283B903300D768C6 /* AAPLEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33293283B903300D768C6 /* AAPLEAGLLayer.m */; };
+		FEB33297283C9CFA00D768C6 /* TCPSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */; };
+		FEB3329A283DBC5200D768C6 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB33299283DBC5200D768C6 /* H264Encoder.swift */; };
+		FEB3329C283DE2BB00D768C6 /* H264Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */; };
+		FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */; };
+		FEB332A1283E149D00D768C6 /* AACPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB332A0283E149D00D768C6 /* AACPlayer.m */; };
 		FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */; };
 		FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */; };
 		FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F7283B6AB000AE9482 /* ViewController.swift */; };
@@ -16,6 +25,8 @@
 		FEBD5A0B283B6AB300AE9482 /* TPVideoCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A0A283B6AB300AE9482 /* TPVideoCallTests.swift */; };
 		FEBD5A15283B6AB300AE9482 /* TPVideoCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */; };
 		FEBD5A17283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */; };
+		FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68228F6600F00D8357B /* H265Encoder.swift */; };
+		FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68428F6710700D8357B /* H265Decoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +47,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE5FAAEF28728D44000124F5 /* DockableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockableController.swift; sourceTree = "<group>"; };
+		FE89E3C5283B732400A8E78C /* TPVideoCall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TPVideoCall-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE89E3C6283B732400A8E78C /* H264Encoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264Encoder.m; sourceTree = "<group>"; };
+		FE89E3C8283B736800A8E78C /* H264Encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264Encoder.h; sourceTree = "<group>"; };
+		FEB3328F283B8A7A00D768C6 /* H264Decoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264Decoder.h; sourceTree = "<group>"; };
+		FEB33290283B8A8D00D768C6 /* H264Decoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264Decoder.m; sourceTree = "<group>"; };
+		FEB33292283B903300D768C6 /* AAPLEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLEAGLLayer.h; sourceTree = "<group>"; };
+		FEB33293283B903300D768C6 /* AAPLEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLEAGLLayer.m; sourceTree = "<group>"; };
+		FEB33295283B906300D768C6 /* HeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDefine.h; sourceTree = "<group>"; };
+		FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCPSocketServer.m; sourceTree = "<group>"; };
+		FEB33298283C9D0D00D768C6 /* TCPSocketServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCPSocketServer.h; sourceTree = "<group>"; };
+		FEB33299283DBC5200D768C6 /* H264Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
+		FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Decoder.swift; sourceTree = "<group>"; };
+		FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACEncoder.swift; sourceTree = "<group>"; };
+		FEB3329F283E149D00D768C6 /* AACPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACPlayer.h; sourceTree = "<group>"; };
+		FEB332A0283E149D00D768C6 /* AACPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACPlayer.m; sourceTree = "<group>"; };
 		FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPVideoCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +76,8 @@
 		FEBD5A10283B6AB300AE9482 /* TPVideoCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPVideoCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITests.swift; sourceTree = "<group>"; };
 		FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEEEB68228F6600F00D8357B /* H265Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Encoder.swift; sourceTree = "<group>"; };
+		FEEEB68428F6710700D8357B /* H265Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Decoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +128,7 @@
 		FEBD59F2283B6AB000AE9482 /* TPVideoCall */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD5A23283B6AD200AE9482 /* Lib */,
 				FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */,
 				FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */,
 				FEBD59F7283B6AB000AE9482 /* ViewController.swift */,
@@ -106,6 +136,7 @@
 				FEBD59FC283B6AB200AE9482 /* Assets.xcassets */,
 				FEBD59FE283B6AB200AE9482 /* LaunchScreen.storyboard */,
 				FEBD5A01283B6AB200AE9482 /* Info.plist */,
+				FE5FAAEF28728D44000124F5 /* DockableController.swift */,
 			);
 			path = TPVideoCall;
 			sourceTree = "<group>";
@@ -125,6 +156,30 @@
 				FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */,
 			);
 			path = TPVideoCallUITests;
+			sourceTree = "<group>";
+		};
+		FEBD5A23283B6AD200AE9482 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3329F283E149D00D768C6 /* AACPlayer.h */,
+				FEB332A0283E149D00D768C6 /* AACPlayer.m */,
+				FEB33295283B906300D768C6 /* HeaderDefine.h */,
+				FEB33292283B903300D768C6 /* AAPLEAGLLayer.h */,
+				FEB33293283B903300D768C6 /* AAPLEAGLLayer.m */,
+				FE89E3C6283B732400A8E78C /* H264Encoder.m */,
+				FE89E3C8283B736800A8E78C /* H264Encoder.h */,
+				FE89E3C5283B732400A8E78C /* TPVideoCall-Bridging-Header.h */,
+				FEB3328F283B8A7A00D768C6 /* H264Decoder.h */,
+				FEB33290283B8A8D00D768C6 /* H264Decoder.m */,
+				FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */,
+				FEB33298283C9D0D00D768C6 /* TCPSocketServer.h */,
+				FEB33299283DBC5200D768C6 /* H264Encoder.swift */,
+				FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */,
+				FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */,
+				FEEEB68428F6710700D8357B /* H265Decoder.swift */,
+				FEEEB68228F6600F00D8357B /* H265Encoder.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +250,7 @@
 				TargetAttributes = {
 					FEBD59EF283B6AB000AE9482 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					FEBD5A05283B6AB300AE9482 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -258,9 +314,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB3329A283DBC5200D768C6 /* H264Encoder.swift in Sources */,
+				FE89E3C7283B732400A8E78C /* H264Encoder.m in Sources */,
+				FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */,
+				FEB33297283C9CFA00D768C6 /* TCPSocketServer.m in Sources */,
+				FE5FAAF028728D44000124F5 /* DockableController.swift in Sources */,
+				FEB33294283B903300D768C6 /* AAPLEAGLLayer.m in Sources */,
 				FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */,
+				FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */,
 				FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */,
 				FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */,
+				FEB3329C283DE2BB00D768C6 /* H264Decoder.swift in Sources */,
+				FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */,
+				FEB33291283B8A8D00D768C6 /* H264Decoder.m in Sources */,
+				FEB332A1283E149D00D768C6 /* AACPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,10 +502,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VN57CT28VK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPVideoCall/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "TPVideoCall camera description.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TPVideoCall micro description.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,9 +521,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCall;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.ftel.cmr.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Personal_profile_Camera;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TPVideoCall/Lib/TPVideoCall-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,10 +537,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VN57CT28VK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPVideoCall/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "TPVideoCall camera description.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "TPVideoCall micro description.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -476,9 +556,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TrucPham.TPVideoCall;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.ftel.cmr.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Personal_profile_Camera;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TPVideoCall/Lib/TPVideoCall-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
