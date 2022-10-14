@@ -3,4 +3,150 @@
    uuid = "AE7BE1DB-EEEF-4BA2-B3D4-3F522426D576"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96C12658-DD1D-4DFB-ACC7-23D332F109D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TPVideoCall/Lib/H265Decoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "H265Decoder"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D604BC4F-0820-4B33-8EE4-A5D763259B15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TPVideoCall/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "signalClient(_:clientsDisonnected:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D604BC4F-0820-4B33-8EE4-A5D763259B15 - 453df8cae8b09808"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TPVideoCall.ViewController.signalClient(_: TPVideoCall.SignalingClient, clientsDisonnected: TPVideoCall.SignalResponse&lt;TPVideoCall.ClientsDisconnected&gt;) -&gt; ()"
+                  moduleName = "TPVideoCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trucpham/Desktop/My%20Project/TPVideoCall/TPVideoCall/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "616">
+               </Location>
+               <Location
+                  uuid = "D604BC4F-0820-4B33-8EE4-A5D763259B15 - 39e443eeebd4f270"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in TPVideoCall.ViewController.signalClient(_: TPVideoCall.SignalingClient, clientsDisonnected: TPVideoCall.SignalResponse&lt;TPVideoCall.ClientsDisconnected&gt;) -&gt; ()"
+                  moduleName = "TPVideoCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trucpham/Desktop/My%20Project/TPVideoCall/TPVideoCall/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AA1E9B4-42AF-448D-92E1-0DAB60FF88BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TPVideoCall/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A2758CC-2E8C-4C9D-B9CE-45428D4D5544"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TPVideoCall/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "signalClient(_:clientsConnected:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A2758CC-2E8C-4C9D-B9CE-45428D4D5544 - f11e54625516aa13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TPVideoCall.ViewController.signalClient(_: TPVideoCall.SignalingClient, clientsConnected: TPVideoCall.SignalResponse&lt;TPVideoCall.ClientsConnected&gt;) -&gt; ()"
+                  moduleName = "TPVideoCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trucpham/Desktop/My%20Project/TPVideoCall/TPVideoCall/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  uuid = "8A2758CC-2E8C-4C9D-B9CE-45428D4D5544 - 1fac24bc36e1846"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in TPVideoCall.ViewController.signalClient(_: TPVideoCall.SignalingClient, clientsConnected: TPVideoCall.SignalResponse&lt;TPVideoCall.ClientsConnected&gt;) -&gt; ()"
+                  moduleName = "TPVideoCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trucpham/Desktop/My%20Project/TPVideoCall/TPVideoCall/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BAC8AE0-C02E-43C3-9F67-BC2C2BC8E74B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TPVideoCall/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

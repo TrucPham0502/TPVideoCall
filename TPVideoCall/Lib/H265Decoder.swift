@@ -148,7 +148,8 @@ class H265Decoder : VideoDecoderProvider {
         }
     }
     func decode(_ data: Data) {
-        decodeQueue.async {
+        decodeQueue.async {[weak self] in
+            guard let self = self else { return }
             let length:UInt32 =  UInt32(data.count)
             self.decodeByte(data: data, size: length)
         }

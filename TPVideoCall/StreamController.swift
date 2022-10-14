@@ -187,8 +187,9 @@ class StreamController : UIViewController {
     
     private func buildAudioEncoder(){
         audioEncoder = AACEncoder()
-        audioEncoder!.encodeCallback = {data in
-            self.webRTCClient.sendData(.init(data: data, type: .audio, id: Config.default.id))
+        audioEncoder!.encodeCallback = {[weak self] data in
+            guard let _self = self else { return }
+            _self.webRTCClient.sendData(.init(data: data, type: .audio, id: Config.default.id))
         }
     }
     
@@ -209,6 +210,16 @@ class StreamController : UIViewController {
     private func buildSignalingClient() {
         self.signalClient = .init()
         self.signalClient.delegate = self
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        
+    }
+    
+    deinit {
+        print("----------- stream page deinit-------------")
+        self.signalClient.leave(room: self.roomId)
     }
     
     func showConfirm(_ message: String , confirm :@escaping () -> (), cancel : @escaping () -> ()){
@@ -346,6 +357,22 @@ extension StreamController : SignalClientDelegate {
     func signalClient(_ signalClient: SignalingClient, buffer data: BufferData) {
         
     }
+    
+    func signalClient(_ signalClient: SignalingClient, leave data: SignalResponse<Leave>) {
+        if self.callIdInRoom.contains(data.id) {
+            guard let value = data.data else { return }
+            self.callIdInRoom = value.clients.filter{ $0 != Config.default.id }
+            self.callIdWattingJoinRoom.removeAll(where: {
+                callIdInRoom.contains($0)
+            })
+            if callIdInRoom.count == 0 {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+    }
+    
     
 }
 extension StreamController : VideoDecoderDelegate {

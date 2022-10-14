@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        buildSignalingClient()
         // Do any additional setup after loading the view.
         self.view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -32,9 +30,18 @@ class ViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+        buildSignalingClient()
     }
     private func buildSignalingClient() {
         self.signalClient = .init()
+        self.signalClient.delegate = self
+        self.signalClient.connect()
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.signalClient.delegate = self
     }
     
@@ -58,8 +65,6 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.signalClient.connect()
-        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -92,6 +97,7 @@ extension ViewController : UITableViewDataSource {
                 guard let _self = self else { return }
                 DispatchQueue.main.async {
                     let vc = StreamController()
+                    vc.modalPresentationStyle = .fullScreen
                     vc.callType = .call(toIds: [_self.data[indexPath.row]])
                     _self.present(vc, animated: true)
                 }
@@ -134,6 +140,7 @@ extension ViewController : SignalClientDelegate {
                 guard let _self = self else { return }
                 DispatchQueue.main.async {
                     let vc = StreamController()
+                    vc.modalPresentationStyle = .fullScreen
                     vc.callType = .receive(fromId: id, fromSysInfo: (scrWith : scrWith, scrHeight : scrHeight, encode : encode, os: os))
                     _self.present(vc, animated: true)
                 }

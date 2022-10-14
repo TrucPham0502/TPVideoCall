@@ -37,7 +37,6 @@ class H264Encoder : VideoEncoderProvider {
     }
     
     private func initVideoToolBox() {
-        print(self)
         //create VTCompressionSession
         let state = VTCompressionSessionCreate(allocator: kCFAllocatorDefault, width: width, height: height, codecType: kCMVideoCodecType_H264, encoderSpecification: nil, imageBufferAttributes: nil, compressedDataAllocator: nil, outputCallback:encodeCallBack , refcon: unsafeBitCast(self, to: UnsafeMutableRawPointer.self), compressionSessionOut: &self.encodeSession)
         
@@ -179,8 +178,8 @@ class H264Encoder : VideoEncoderProvider {
         if self.encodeSession == nil {
             initVideoToolBox()
         }
-        encodeQueue.async {
-            guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        encodeQueue.async {[weak self] in
+            guard let self = self, let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 //            let time = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
 //            let duration = CMSampleBufferGetDuration(sampleBuffer)
 //            let time = CMTime(value: self.frameID, timescale: 10000)
