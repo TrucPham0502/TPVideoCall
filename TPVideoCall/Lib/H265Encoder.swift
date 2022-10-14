@@ -8,7 +8,8 @@
 import Foundation
 import VideoToolbox
 
-class H265Encoder {
+class H265Encoder : VideoEncoderProvider {
+    weak var delegate : VideoEncoderDelegate?
     private var frameID:Int64 = 0
     private var hasVpsSpsPps = false
     private var width: Int32 = 1920
@@ -22,10 +23,12 @@ class H265Encoder {
     var encodeSession:VTCompressionSession!
     var encodeCallBack:VTCompressionOutputCallback?
     
-    var encodeCallback : ((Data)-> Void) = {_ in }
-    var encodeCallbackSPSAndPPS :((Data,Data, Data)->Void) = {_, _, _ in }
+    init() {
+        setCallBack()
+        initVideoToolBox()
+    }
     
-    init(width:Int32 = 1920,height:Int32 = 1080,bitRate : Int32? = nil,fps: Int32? = nil) {
+    func setConfig(width:Int32, height:Int32, bitRate : Int32?, fps: Int32?){
         self.width = width
         self.height = height
         self.bitRate = bitRate != nil ? bitRate! : width * height * 3 * 4
@@ -33,6 +36,7 @@ class H265Encoder {
         setCallBack()
         initVideoToolBox()
     }
+    
     
     private func initVideoToolBox() {
         guard VTIsHardwareDecodeSupported(kCMVideoCodecType_HEVC) else { return }
@@ -138,7 +142,7 @@ class H265Encoder {
                         ppsDataValue.append(startCode, count: 4)
                         ppsDataValue.append(ppsData, count: ppsSize)
                         encoder.callBackQueue.async {
-                            encoder.encodeCallbackSPSAndPPS(vpsDataValue, spsDataValue, ppsDataValue)
+                            encoder.delegate?.videoEncoder(encoder, nal: vpsDataValue, sps: spsDataValue, pps: ppsDataValue)
                         }
                     }
                 }
@@ -176,7 +180,7 @@ class H265Encoder {
                 data.append(naluUnsafePoint + UnsafePointer<UInt8>.Stride(offset + UInt32(lengthInfoSize)) , count: Int(naluDataLength))
                 
                 encoder.callBackQueue.async {
-                    encoder.encodeCallback(data)
+                    encoder.delegate?.videoEncoder(encoder, callback: data)
                 }
                 offset += (naluDataLength + UInt32(lengthInfoSize))
                 
@@ -185,12 +189,13 @@ class H265Encoder {
     }
     
     //Start coding
-    func encodeVideo(sampleBuffer:CMSampleBuffer){
+    func encode(_ sampleBuffer:CMSampleBuffer){
+        guard VTIsHardwareDecodeSupported(kCMVideoCodecType_HEVC) else { return }
         if self.encodeSession == nil {
             initVideoToolBox()
         }
-        encodeQueue.async {
-            guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        encodeQueue.async {[weak self] in
+            guard let self = self, let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
             let time = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
 //            let duration = CMSampleBufferGetDuration(sampleBuffer)
 //            let time = CMTime(value: self.frameID, timescale: 100)

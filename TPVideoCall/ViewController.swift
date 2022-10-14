@@ -7,175 +7,172 @@
 
 import UIKit
 import AVFoundation
+import WebRTC
 
 class ViewController: UIViewController {
-//    private var pipController : DockableController = .init()
-    private var playLayer : AAPLEAGLLayer!
-    let bufferlayer = AVSampleBufferDisplayLayer()
-    private lazy var previewLayer : AVCaptureVideoPreviewLayer = {
-        let v = AVCaptureVideoPreviewLayer(session: session)
-        v.videoGravity = AVLayerVideoGravity.resizeAspectFill
+    private var signalClient : SignalingClient!
+    var data : [String] = []
+    private lazy var tableView : UITableView = {
+        let v = UITableView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.register(UserTableViewCell.self, forCellReuseIdentifier: "UserTableViewCell")
+        v.backgroundColor = .red
+        v.dataSource = self
         return v
     }()
-    
-    private lazy var aacPlayer : AACPlayer = {
-        let v = AACPlayer()
-        
-        return v
-    }()
-    
-    // MARK: Video session properties
-    private let session = AVCaptureSession()
-    // MARK: Video output properties
-    private var videoOutput = AVCaptureVideoDataOutput()
-    private let videoOutputQueue = DispatchQueue(label: "org.pshishkanov.videoOutputQueue")
-    // MARK: audio Output propert   ies
-    private let audioOutput = AVCaptureAudioDataOutput()
-    private let audioOutputQueue = DispatchQueue(label: "org.pshishkanov.audioOutputQueue")
-    // MARK: Coder properties
-    fileprivate var videoEncoder: H265Encoder?
-    fileprivate var videoDecoder: H265Decoder?
-    
-    fileprivate var audioEncoder: AACEncoder?
-    
-    // MARK: Camera devices
-    private var defaultCamera: AVCaptureDevice = {
-        let devices = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)!
-        return devices
-    }()
-    
-    private var defaultAudio: AVCaptureDevice = {
-        let devices = AVCaptureDevice.devices(for: AVMediaType.audio) 
-        return devices[0]
-    }()
-    var videoConnection : AVCaptureConnection?
-    var audioConnection : AVCaptureConnection?
     override func viewDidLoad() {
         super.viewDidLoad()
-        playLayer = AAPLEAGLLayer(frame: UIScreen.main.bounds)
-        setupVideoSession()
-        videoEncoder = H265Encoder(width: 200, height: 300)
-        videoDecoder = H265Decoder(width: 200, height: 300)
-        audioEncoder = AACEncoder()
-        videoEncoder?.encodeCallbackSPSAndPPS = {vps, sps, pps in
-            self.videoDecoder?.decode(data: vps)
-            self.videoDecoder?.decode(data: sps)
-            self.videoDecoder?.decode(data: pps)
-        }
-        videoEncoder?.encodeCallback = {data in
-            self.videoDecoder?.decode(data: data)
-        }
-        videoDecoder?.decodeCallback = {pixel in
-            self.playLayer.pixelBuffer = pixel
-        }
-        videoDecoder?.decodeWithSampeBufferCallback = {[weak self] buff in
-            guard let _self = self else { return  }
-            print("buffer sample: \(buff)")
-//            _self.pipController.render(buff)
-            _self.bufferlayer.enqueue(buff)
-        }
-        audioEncoder?.encodeCallback = {data in
-            print("audio encode : \(data)")
-//            self.aacPlayer.play(data)
-        }
         
-        
-        self.view.layer.addSublayer(bufferlayer)
-   
-       
-        playLayer.backgroundColor = UIColor.yellow.cgColor
-        
-        self.view.layer.addSublayer(previewLayer)
+        buildSignalingClient()
         // Do any additional setup after loading the view.
+        self.view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
     }
+    private func buildSignalingClient() {
+        self.signalClient = .init()
+        self.signalClient.delegate = self
+    }
+    
+    @objc func answerTap(){
+        //        self.webRTCClient.answer {[weak self] (localSdp) in
+        //            guard let _self = self else { return }
+        //            _self.signalClient.send(sdp: localSdp, room: _self.roomId)
+        //        }
+    }
+    
+    @objc func offerTap(){
+        //        self.webRTCClient.offer {[weak self] (sdp) in
+        //            guard let _self = self else { return }
+        //            _self.signalClient.send(sdp: sdp, room: _self.roomId)
+        //        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if session.isRunning {
-            session.stopRunning()
-        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.videoOutput.setSampleBufferDelegate(self, queue: self.videoOutputQueue)
-        self.audioOutput.setSampleBufferDelegate(self, queue: self.audioOutputQueue)
-        if !self.session.isRunning {
-            self.session.startRunning()
-        }
-        
-//        if #available(iOS 15.0, *) {
-//            let pipController = PipController(videoCallViewSourceView: self.view)
-//            pipController.start()
-//            videoDecoder?.decodeWithSampeBufferCallback = {[weak self] buff in
-//                guard let _self = self else { return  }
-//                print("buffer sample: \(buff)")
-//    //            _self.pipController.render(buff)
-//                pipController.sampleBufferVideoCallView.sampleBufferDisplayLayer.enqueue(buff)
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        }
-        
+        self.signalClient.connect()
         
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        previewLayer.frame = .init(origin: .init(x: self.view.bounds.width - 200, y: 0), size: .init(width: 200, height: 300))
-        
-        bufferlayer.frame = .init(origin: .init(x: 0, y: self.view.bounds.height - 300), size: .init(width: 200, height: 300))
-    }
-    private func setupVideoSession() {
-        session.beginConfiguration()
-        session.sessionPreset = AVCaptureSession.Preset.high
-        do {
-            let videoInput = try AVCaptureDeviceInput(device: defaultCamera)
-            if (session.canAddInput(videoInput)) {
-                session.addInput(videoInput)
-            }
-            let audioInput = try AVCaptureDeviceInput(device: defaultAudio)
-            if (session.canAddInput(audioInput)) {
-                session.addInput(audioInput)
-            }
-        } catch {
-            session.commitConfiguration()
-            return
-        }
-        
-        videoOutput.alwaysDiscardsLateVideoFrames = true
-        videoOutput.videoSettings = [String(kCVPixelBufferPixelFormatTypeKey) : Int(kCVPixelFormatType_32BGRA)]
-        if session.canAddOutput(videoOutput) {
-            session.addOutput(videoOutput)
-            /* Setup connection orientation only after add output to session. Else connection is nil. */
-            self.videoConnection = videoOutput.connection(with: .video)
-            videoOutput.connection(with: AVMediaType.video)?.videoOrientation = .portrait
-        }
-
-        if session.canAddOutput(audioOutput) {
-            session.addOutput(audioOutput)
-            self.audioConnection = audioOutput.connection(with: .audio)
-        }
-        session.commitConfiguration()
     }
     
-
+    func showConfirm(_ message: String , confirm :@escaping () -> (), cancel : @escaping () -> ()){
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { action in
+                cancel()
+            }))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+                confirm()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 
-extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
-//
-//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-//        videoEncoder?.encode(sampleBuffer)
-//    }
-//    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        videoEncoder?.encode(sampleBuffer)
-//    }
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        if connection == videoConnection {
-            videoEncoder?.encodeVideo(sampleBuffer: sampleBuffer)
-        }
-        else if connection == audioConnection{
-            self.audioEncoder?.encodeSampleBuffer(sampleBuffer: sampleBuffer)
-        }
+extension ViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath)
+        if let cell = cell as? UserTableViewCell {
+            cell.lbTitle.text = data[indexPath.row]
+            cell.cellSelected = {[weak self] in
+                guard let _self = self else { return }
+                DispatchQueue.main.async {
+                    let vc = StreamController()
+                    vc.callType = .call(toIds: [_self.data[indexPath.row]])
+                    _self.present(vc, animated: true)
+                }
+            }
+        }
+        return cell
+    }
+    
+    
+}
 
+extension ViewController : SignalClientDelegate {
+    func signalClientDidConnect(_ signalClient: SignalingClient) {
+        tableView.backgroundColor = .green
+    }
+    
+    func signalClientDidDisconnect(_ signalClient: SignalingClient) {
+        tableView.backgroundColor = .red
+    }
+    
+    func signalClient(_ signalClient: SignalingClient, clientsConnected data: SignalResponse<ClientsConnected>) {
+        self.data = data.data?.clients.filter{ $0 != Config.default.id } ?? []
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    func signalClient(_ signalClient: SignalingClient, clientsDisonnected data: SignalResponse<ClientsDisconnected>) {
+        if let idx = self.data.firstIndex(where: { $0 == data.id }){
+            self.data.remove(at: idx)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    func signalClient(_ signalClient: SignalingClient, request data: Request) {
+        switch data {
+        case let .call(id, scrWith, scrHeight, encode, os):
+            showConfirm("Received call from \(id)") {[weak self] in
+                guard let _self = self else { return }
+                DispatchQueue.main.async {
+                    let vc = StreamController()
+                    vc.callType = .receive(fromId: id, fromSysInfo: (scrWith : scrWith, scrHeight : scrHeight, encode : encode, os: os))
+                    _self.present(vc, animated: true)
+                }
+            } cancel: {[weak self] in
+                guard let _self = self else { return }
+                _self.signalClient.sendResponseTo(response: .call(id: Config.default.id, scrWith: Int(UIScreen.main.bounds.width), scrHeight: Int(UIScreen.main.bounds.height), encode: EncodeType.support.rawValue, os: UIDevice.current.systemVersion, accept: false), sendTo: .user(id: id))
+            }
+        default: break;
+        }
+        
+    }
+}
+
+class UserTableViewCell : UITableViewCell {
+    var cellSelected : () -> () = {}
+    lazy var lbTitle : UILabel = {
+        let v = UILabel()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        prepareUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    @objc func cellTap(){
+        cellSelected()
+    }
+    private func prepareUI(){
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellTap)))
+        self.contentView.addSubview(lbTitle)
+        NSLayoutConstraint.activate([
+            lbTitle.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 24),
+            lbTitle.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -24),
+            lbTitle.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20),
+            lbTitle.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -20),
+        ])
+    }
 }

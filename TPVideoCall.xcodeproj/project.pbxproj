@@ -17,7 +17,6 @@
 		FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */; };
 		FEB332A1283E149D00D768C6 /* AACPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB332A0283E149D00D768C6 /* AACPlayer.m */; };
 		FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */; };
-		FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */; };
 		FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD59F7283B6AB000AE9482 /* ViewController.swift */; };
 		FEBD59FB283B6AB000AE9482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBD59F9283B6AB000AE9482 /* Main.storyboard */; };
 		FEBD59FD283B6AB200AE9482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBD59FC283B6AB200AE9482 /* Assets.xcassets */; };
@@ -25,8 +24,27 @@
 		FEBD5A0B283B6AB300AE9482 /* TPVideoCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A0A283B6AB300AE9482 /* TPVideoCallTests.swift */; };
 		FEBD5A15283B6AB300AE9482 /* TPVideoCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */; };
 		FEBD5A17283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */; };
+		FEE12CB128F9D15D00211967 /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB028F9D15D00211967 /* VideoDecoder.swift */; };
+		FEE12CB328F9D16800211967 /* VideoEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB228F9D16800211967 /* VideoEncoder.swift */; };
 		FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68228F6600F00D8357B /* H265Encoder.swift */; };
 		FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68428F6710700D8357B /* H265Decoder.swift */; };
+		FEEEB69528F6A30700D8357B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68E28F6A30600D8357B /* Message.swift */; };
+		FEEEB69628F6A30700D8357B /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */; };
+		FEEEB69728F6A30700D8357B /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */; };
+		FEEEB69828F6A30700D8357B /* StarscreamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */; };
+		FEEEB69928F6A30700D8357B /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69328F6A30600D8357B /* WebRTCClient.swift */; };
+		FEEEB69A28F6A30700D8357B /* SignalingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69428F6A30600D8357B /* SignalingClient.swift */; };
+		FEEEB6A228F6A4AF00D8357B /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */; };
+		FEEEB6A328F6A4AF00D8357B /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */; };
+		FEEEB6A428F6A4AF00D8357B /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */; };
+		FEEEB6A628F6A5C000D8357B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A528F6A5C000D8357B /* Config.swift */; };
+		FEEEB6AA28F6AB6500D8357B /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = FEEEB6A928F6AB6500D8357B /* Starscream */; };
+		FEEEB6AB28F6AB6900D8357B /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */; };
+		FEEEB6AC28F6AB6900D8357B /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEEEB6AF28F6FC3F00D8357B /* BufferData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */; };
+		FEEEB6B128F7059E00D8357B /* AACPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B028F7059E00D8357B /* AACPlayer.swift */; };
+		FEEEB6B528F80D2300D8357B /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B428F80D2300D8357B /* SignalMessage.swift */; };
+		FEEEB6B728F8451900D8357B /* StreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B628F8451900D8357B /* StreamController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +63,20 @@
 			remoteInfo = TPVideoCall;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEEEB6AD28F6AB6900D8357B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEEEB6AC28F6AB6900D8357B /* WebRTC.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FE5FAAEF28728D44000124F5 /* DockableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockableController.swift; sourceTree = "<group>"; };
@@ -65,7 +97,6 @@
 		FEB332A0283E149D00D768C6 /* AACPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACPlayer.m; sourceTree = "<group>"; };
 		FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPVideoCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FEBD59F7283B6AB000AE9482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FEBD59FA283B6AB000AE9482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEBD59FC283B6AB200AE9482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,8 +107,25 @@
 		FEBD5A10283B6AB300AE9482 /* TPVideoCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPVideoCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBD5A14283B6AB300AE9482 /* TPVideoCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITests.swift; sourceTree = "<group>"; };
 		FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEE12CB028F9D15D00211967 /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
+		FEE12CB228F9D16800211967 /* VideoEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEncoder.swift; sourceTree = "<group>"; };
 		FEEEB68228F6600F00D8357B /* H265Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Encoder.swift; sourceTree = "<group>"; };
 		FEEEB68428F6710700D8357B /* H265Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Decoder.swift; sourceTree = "<group>"; };
+		FEEEB68E28F6A30600D8357B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
+		FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarscreamProvider.swift; sourceTree = "<group>"; };
+		FEEEB69328F6A30600D8357B /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
+		FEEEB69428F6A30600D8357B /* SignalingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingClient.swift; sourceTree = "<group>"; };
+		FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
+		FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
+		FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
+		FEEEB6A528F6A5C000D8357B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = TPVideoCall/WebRTC.xcframework; sourceTree = "<group>"; };
+		FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferData.swift; sourceTree = "<group>"; };
+		FEEEB6B028F7059E00D8357B /* AACPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACPlayer.swift; sourceTree = "<group>"; };
+		FEEEB6B428F80D2300D8357B /* SignalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
+		FEEEB6B628F8451900D8357B /* StreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEEEB6AB28F6AB6900D8357B /* WebRTC.xcframework in Frameworks */,
+				FEEEB6AA28F6AB6500D8357B /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +162,7 @@
 				FEBD5A09283B6AB300AE9482 /* TPVideoCallTests */,
 				FEBD5A13283B6AB300AE9482 /* TPVideoCallUITests */,
 				FEBD59F1283B6AB000AE9482 /* Products */,
+				FEEEB68A28F6A2CD00D8357B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,15 +179,18 @@
 		FEBD59F2283B6AB000AE9482 /* TPVideoCall */ = {
 			isa = PBXGroup;
 			children = (
+				FEEEB69E28F6A4AF00D8357B /* Extensions */,
+				FEEEB68D28F6A30600D8357B /* Services */,
 				FEBD5A23283B6AD200AE9482 /* Lib */,
 				FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */,
-				FEBD59F5283B6AB000AE9482 /* SceneDelegate.swift */,
 				FEBD59F7283B6AB000AE9482 /* ViewController.swift */,
 				FEBD59F9283B6AB000AE9482 /* Main.storyboard */,
 				FEBD59FC283B6AB200AE9482 /* Assets.xcassets */,
 				FEBD59FE283B6AB200AE9482 /* LaunchScreen.storyboard */,
 				FEBD5A01283B6AB200AE9482 /* Info.plist */,
 				FE5FAAEF28728D44000124F5 /* DockableController.swift */,
+				FEEEB6A528F6A5C000D8357B /* Config.swift */,
+				FEEEB6B628F8451900D8357B /* StreamController.swift */,
 			);
 			path = TPVideoCall;
 			sourceTree = "<group>";
@@ -178,8 +232,54 @@
 				FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */,
 				FEEEB68428F6710700D8357B /* H265Decoder.swift */,
 				FEEEB68228F6600F00D8357B /* H265Encoder.swift */,
+				FEEEB6B028F7059E00D8357B /* AACPlayer.swift */,
+				FEE12CB028F9D15D00211967 /* VideoDecoder.swift */,
+				FEE12CB228F9D16800211967 /* VideoEncoder.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		FEEEB68A28F6A2CD00D8357B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEEEB68D28F6A30600D8357B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEEEB68E28F6A30600D8357B /* Message.swift */,
+				FEEEB6B428F80D2300D8357B /* SignalMessage.swift */,
+				FEEEB68F28F6A30600D8357B /* WebSocketProvider */,
+				FEEEB69328F6A30600D8357B /* WebRTCClient.swift */,
+				FEEEB69428F6A30600D8357B /* SignalingClient.swift */,
+			);
+			name = Services;
+			path = "../../../../Downloads/WebRTC-iOS-main 4/WebRTC-Demo-App/Sources/Services";
+			sourceTree = "<group>";
+		};
+		FEEEB68F28F6A30600D8357B /* WebSocketProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */,
+				FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */,
+				FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */,
+			);
+			path = WebSocketProvider;
+			sourceTree = "<group>";
+		};
+		FEEEB69E28F6A4AF00D8357B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */,
+				FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */,
+				FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */,
+				FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */,
+			);
+			name = Extensions;
+			path = "../../../../Downloads/WebRTC-iOS-main 4/WebRTC-Demo-App/Sources/Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,12 +292,16 @@
 				FEBD59EC283B6AB000AE9482 /* Sources */,
 				FEBD59ED283B6AB000AE9482 /* Frameworks */,
 				FEBD59EE283B6AB000AE9482 /* Resources */,
+				FEEEB6AD28F6AB6900D8357B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TPVideoCall;
+			packageProductDependencies = (
+				FEEEB6A928F6AB6500D8357B /* Starscream */,
+			);
 			productName = TPVideoCall;
 			productReference = FEBD59F0283B6AB000AE9482 /* TPVideoCall.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +375,9 @@
 				Base,
 			);
 			mainGroup = FEBD59E7283B6AB000AE9482;
+			packageReferences = (
+				FEEEB69B28F6A33500D8357B /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = FEBD59F1283B6AB000AE9482 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,15 +425,30 @@
 				FE89E3C7283B732400A8E78C /* H264Encoder.m in Sources */,
 				FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */,
 				FEB33297283C9CFA00D768C6 /* TCPSocketServer.m in Sources */,
+				FEEEB6B528F80D2300D8357B /* SignalMessage.swift in Sources */,
+				FEEEB6B728F8451900D8357B /* StreamController.swift in Sources */,
+				FEEEB69628F6A30700D8357B /* WebSocketProvider.swift in Sources */,
+				FEEEB6A628F6A5C000D8357B /* Config.swift in Sources */,
+				FEEEB6A428F6A4AF00D8357B /* IceCandidate.swift in Sources */,
+				FEEEB69928F6A30700D8357B /* WebRTCClient.swift in Sources */,
 				FE5FAAF028728D44000124F5 /* DockableController.swift in Sources */,
 				FEB33294283B903300D768C6 /* AAPLEAGLLayer.m in Sources */,
 				FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */,
+				FEEEB69728F6A30700D8357B /* NativeWebSocket.swift in Sources */,
+				FEEEB69828F6A30700D8357B /* StarscreamProvider.swift in Sources */,
 				FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */,
+				FEEEB6A228F6A4AF00D8357B /* RTCStates.swift in Sources */,
+				FEEEB6A328F6A4AF00D8357B /* SessionDescription.swift in Sources */,
 				FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */,
-				FEBD59F6283B6AB000AE9482 /* SceneDelegate.swift in Sources */,
 				FEB3329C283DE2BB00D768C6 /* H264Decoder.swift in Sources */,
+				FEEEB69A28F6A30700D8357B /* SignalingClient.swift in Sources */,
+				FEEEB6AF28F6FC3F00D8357B /* BufferData.swift in Sources */,
+				FEE12CB128F9D15D00211967 /* VideoDecoder.swift in Sources */,
 				FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */,
+				FEEEB69528F6A30700D8357B /* Message.swift in Sources */,
 				FEB33291283B8A8D00D768C6 /* H264Decoder.m in Sources */,
+				FEEEB6B128F7059E00D8357B /* AACPlayer.swift in Sources */,
+				FEE12CB328F9D16800211967 /* VideoEncoder.swift in Sources */,
 				FEB332A1283E149D00D768C6 /* AACPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,10 +625,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VN57CT28VK;
+				DEVELOPMENT_TEAM = 7755R4CX4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPVideoCall/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "TPVideoCall camera description.";
@@ -516,14 +638,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ftel.cmr.camera;
+				PRODUCT_BUNDLE_IDENTIFIER = beta.ftel.cmr.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Personal_profile_Camera;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TPVideoCall/Lib/TPVideoCall-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -538,10 +661,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VN57CT28VK;
+				DEVELOPMENT_TEAM = 7755R4CX4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPVideoCall/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "TPVideoCall camera description.";
@@ -551,14 +674,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.ftel.cmr.camera;
+				PRODUCT_BUNDLE_IDENTIFIER = beta.ftel.cmr.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Personal_profile_Camera;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TPVideoCall/Lib/TPVideoCall-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -678,6 +802,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEEEB69B28F6A33500D8357B /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEEEB6A928F6AB6500D8357B /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEEEB69B28F6A33500D8357B /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEBD59E8283B6AB000AE9482 /* Project object */;
 }

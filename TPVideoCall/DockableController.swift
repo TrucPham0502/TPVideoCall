@@ -18,27 +18,33 @@ class SampleBufferVideoCallView: UIView {
         return layer as! AVSampleBufferDisplayLayer
     }
 }
-@available(iOS 15.0, *)
+
 class PipController {
     let sampleBufferVideoCallView = SampleBufferVideoCallView()
-    var pipController : AVPictureInPictureController?
+    var pipController : Any?
     init(videoCallViewSourceView : UIView){
-        let pipVideoCallViewController = AVPictureInPictureVideoCallViewController()
-        pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
-        pipVideoCallViewController.view.addSubview(sampleBufferVideoCallView)
+        if #available(iOS 15.0, *) {
+            let pipVideoCallViewController = AVPictureInPictureVideoCallViewController()
+            pipVideoCallViewController.preferredContentSize = CGSize(width: 1080, height: 1920)
+            pipVideoCallViewController.view.addSubview(sampleBufferVideoCallView)
+            
+            let pipContentSource = AVPictureInPictureController.ContentSource(
+                activeVideoCallSourceView: videoCallViewSourceView,
+                contentViewController: pipVideoCallViewController)
+            
+            pipController = AVPictureInPictureController(contentSource: pipContentSource)
+            (pipController as! AVPictureInPictureController).canStartPictureInPictureAutomaticallyFromInline = true
+//            pipController.delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
         
-        let pipContentSource = AVPictureInPictureController.ContentSource(
-            activeVideoCallSourceView: videoCallViewSourceView,
-            contentViewController: pipVideoCallViewController)
-        
-        pipController = AVPictureInPictureController(contentSource: pipContentSource)
-        pipController!.canStartPictureInPictureAutomaticallyFromInline = true
-//        pipController.delegate = self
+
     }
     func start(){
-        pipController?.startPictureInPicture()
+        (pipController as? AVPictureInPictureController)?.startPictureInPicture()
     }
     func stop(){
-        pipController?.stopPictureInPicture()
+        (pipController as? AVPictureInPictureController)?.stopPictureInPicture()
     }
 }

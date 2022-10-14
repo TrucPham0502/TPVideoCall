@@ -7,7 +7,8 @@
 
 import Foundation
 import VideoToolbox
-class H265Decoder {
+class H265Decoder : VideoDecoderProvider {
+    weak var delegate : VideoDecoderDelegate?
     var width: Int32 = 1920
     var height:Int32 = 1080
     
@@ -22,11 +23,8 @@ class H265Decoder {
     var decompressionSession : VTDecompressionSession?
     var callback : VTDecompressionOutputCallback?
     
-    var decodeCallback:((CVImageBuffer?) -> Void)?
     
-    var decodeWithSampeBufferCallback:((CMSampleBuffer) -> Void)?
-    
-    init(width:Int32 = 1920,height:Int32 = 1080) {
+    func setConfig(width: Int32, height: Int32) {
         self.width = width
         self.height = height
     }
@@ -137,19 +135,19 @@ class H265Decoder {
         //(UnsafeMutableRawPointer?, UnsafeMutableRawPointer?, OSStatus, VTDecodeInfoFlags, CVImageBuffer?, CMTime, CMTime) -> Void
         callback = { decompressionOutputRefCon,sourceFrameRefCon,status,inforFlags,imageBuffer,presentationTimeStamp,presentationDuration in
             let decoder : H265Decoder = unsafeBitCast(decompressionOutputRefCon, to: H265Decoder.self)
-            guard imageBuffer != nil else {
+            guard let imageBuffer = imageBuffer else {
                 return
             }
             //            sourceFrameRefCon = imageBuffer
-            if let block = decoder.decodeCallback  {
+            if let block = decoder.delegate  {
                 decoder.callBackQueue.async {
-                    block(imageBuffer)
+                    block.videoDecoder(decoder, image: imageBuffer)
                 }
                 
             }
         }
     }
-    func decode(data:Data) {
+    func decode(_ data: Data) {
         decodeQueue.async {
             let length:UInt32 =  UInt32(data.count)
             self.decodeByte(data: data, size: length)
@@ -272,7 +270,7 @@ class H265Decoder {
                                  Unmanaged.passUnretained(kCMSampleAttachmentKey_DisplayImmediately).toOpaque(),
                                  Unmanaged.passUnretained(kCFBooleanTrue).toOpaque())
         }
-        decodeWithSampeBufferCallback?(sampleBuffer!)
+        self.delegate?.videoDecoder(self, sampleBuffer: sampleBuffer!)
     }
     
     deinit {

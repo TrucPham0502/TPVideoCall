@@ -7,7 +7,8 @@
 
 import Foundation
 import VideoToolbox
-class H264Encoder {
+class H264Encoder : VideoEncoderProvider {
+    weak var delegate : VideoEncoderDelegate?
     private var frameID:Int64 = 0
     private var hasSpsPps = false
     private var width: Int32 = 1920
@@ -19,10 +20,14 @@ class H264Encoder {
     
     private var encodeSession:VTCompressionSession!
     private var encodeCallBack:VTCompressionOutputCallback?
+
     
-    var encodeCallback : ((Data)-> Void) = {_ in }
-    var encodeCallbackSPSAndPPS :((Data,Data)->Void) = {_, _ in }
-    init(width:Int32 = 1920,height:Int32 = 1080,bitRate : Int32? = nil,fps: Int32? = nil) {
+    init() {
+        setCallBack()
+        initVideoToolBox()
+    }
+    
+    func setConfig(width:Int32, height:Int32, bitRate : Int32?, fps: Int32?){
         self.width = width
         self.height = height
         self.bitRate = bitRate != nil ? bitRate! : width * height * 3 * 4
@@ -123,7 +128,7 @@ class H264Encoder {
                         ppsDataValue.append(startCode, count: 4)
                         ppsDataValue.append(ppsData, count: ppsSize)
                         encoder.callBackQueue.async {
-                            encoder.encodeCallbackSPSAndPPS(spsDataValue, ppsDataValue)
+                            encoder.delegate?.videoEncoder(encoder, nal: nil, sps: spsDataValue, pps: ppsDataValue)
                         }
                     }
                 }
@@ -161,7 +166,7 @@ class H264Encoder {
                 data.append(naluUnsafePoint + UnsafePointer<UInt8>.Stride(offset + UInt32(lengthInfoSize)) , count: Int(naluDataLength))
                 
                 encoder.callBackQueue.async {
-                    encoder.encodeCallback(data)
+                    encoder.delegate?.videoEncoder(encoder, callback: data)
                 }
                 offset += (naluDataLength + UInt32(lengthInfoSize))
                 
@@ -170,17 +175,17 @@ class H264Encoder {
     }
     
     //Start coding
-    func encodeVideo(sampleBuffer:CMSampleBuffer){
+    func encode(_ sampleBuffer:CMSampleBuffer){
         if self.encodeSession == nil {
             initVideoToolBox()
         }
         encodeQueue.async {
             guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-            let time = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+//            let time = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
 //            let duration = CMSampleBufferGetDuration(sampleBuffer)
-//            let time = CMTime(value: self.frameID, timescale: 100)
+//            let time = CMTime(value: self.frameID, timescale: 10000)
             var flags: VTEncodeInfoFlags = VTEncodeInfoFlags()
-            let state = VTCompressionSessionEncodeFrame(self.encodeSession, imageBuffer: imageBuffer, presentationTimeStamp: time, duration: .invalid, frameProperties: nil, sourceFrameRefcon: nil, infoFlagsOut: &flags)
+            let state = VTCompressionSessionEncodeFrame(self.encodeSession, imageBuffer: imageBuffer, presentationTimeStamp: .invalid, duration: .invalid, frameProperties: nil, sourceFrameRefcon: nil, infoFlagsOut: &flags)
             if state != noErr{
                 print("encode filure")
             }

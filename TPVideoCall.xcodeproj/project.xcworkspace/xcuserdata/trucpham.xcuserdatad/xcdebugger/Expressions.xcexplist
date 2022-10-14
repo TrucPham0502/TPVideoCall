@@ -3,10 +3,34 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "StreamController.viewDidLayoutSubviews():StreamController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.localView.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "H265Decoder.decode(frame:size:):H265Decoder.swift">
          <PersistentStrings>
             <PersistentString
                value = "sampleBuffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StreamController.handleSignalConnected():StreamController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "callToId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StreamController.viewWillLayoutSubviews():StreamController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.localView.frame.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
