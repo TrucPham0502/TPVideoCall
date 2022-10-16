@@ -11,7 +11,6 @@
 		FE89E3C7283B732400A8E78C /* H264Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89E3C6283B732400A8E78C /* H264Encoder.m */; };
 		FEB33291283B8A8D00D768C6 /* H264Decoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33290283B8A8D00D768C6 /* H264Decoder.m */; };
 		FEB33294283B903300D768C6 /* AAPLEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33293283B903300D768C6 /* AAPLEAGLLayer.m */; };
-		FEB33297283C9CFA00D768C6 /* TCPSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */; };
 		FEB3329A283DBC5200D768C6 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB33299283DBC5200D768C6 /* H264Encoder.swift */; };
 		FEB3329C283DE2BB00D768C6 /* H264Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */; };
 		FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */; };
@@ -26,24 +25,24 @@
 		FEBD5A17283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */; };
 		FEE12CB128F9D15D00211967 /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB028F9D15D00211967 /* VideoDecoder.swift */; };
 		FEE12CB328F9D16800211967 /* VideoEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB228F9D16800211967 /* VideoEncoder.swift */; };
+		FEE12CBF28FC68E400211967 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB728FC68E400211967 /* Message.swift */; };
+		FEE12CC028FC68E400211967 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CB928FC68E400211967 /* WebSocketProvider.swift */; };
+		FEE12CC128FC68E400211967 /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CBA28FC68E400211967 /* NativeWebSocket.swift */; };
+		FEE12CC228FC68E400211967 /* StarscreamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CBB28FC68E400211967 /* StarscreamProvider.swift */; };
+		FEE12CC328FC68E400211967 /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CBC28FC68E400211967 /* WebRTCClient.swift */; };
+		FEE12CC428FC68E400211967 /* SignalingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CBD28FC68E400211967 /* SignalingClient.swift */; };
+		FEE12CCC28FC68F100211967 /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CC728FC68F100211967 /* RTCStates.swift */; };
+		FEE12CCD28FC68F100211967 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CC828FC68F100211967 /* SessionDescription.swift */; };
+		FEE12CCE28FC68F100211967 /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CC928FC68F100211967 /* IceCandidate.swift */; };
+		FEE12CCF28FC68F100211967 /* BufferData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CCA28FC68F100211967 /* BufferData.swift */; };
+		FEE12CD228FC694600211967 /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE12CD128FC694600211967 /* SignalMessage.swift */; };
 		FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68228F6600F00D8357B /* H265Encoder.swift */; };
 		FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68428F6710700D8357B /* H265Decoder.swift */; };
-		FEEEB69528F6A30700D8357B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB68E28F6A30600D8357B /* Message.swift */; };
-		FEEEB69628F6A30700D8357B /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */; };
-		FEEEB69728F6A30700D8357B /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */; };
-		FEEEB69828F6A30700D8357B /* StarscreamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */; };
-		FEEEB69928F6A30700D8357B /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69328F6A30600D8357B /* WebRTCClient.swift */; };
-		FEEEB69A28F6A30700D8357B /* SignalingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69428F6A30600D8357B /* SignalingClient.swift */; };
-		FEEEB6A228F6A4AF00D8357B /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */; };
-		FEEEB6A328F6A4AF00D8357B /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */; };
-		FEEEB6A428F6A4AF00D8357B /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */; };
 		FEEEB6A628F6A5C000D8357B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6A528F6A5C000D8357B /* Config.swift */; };
 		FEEEB6AA28F6AB6500D8357B /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = FEEEB6A928F6AB6500D8357B /* Starscream */; };
 		FEEEB6AB28F6AB6900D8357B /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */; };
 		FEEEB6AC28F6AB6900D8357B /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FEEEB6AF28F6FC3F00D8357B /* BufferData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */; };
 		FEEEB6B128F7059E00D8357B /* AACPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B028F7059E00D8357B /* AACPlayer.swift */; };
-		FEEEB6B528F80D2300D8357B /* SignalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B428F80D2300D8357B /* SignalMessage.swift */; };
 		FEEEB6B728F8451900D8357B /* StreamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEEB6B628F8451900D8357B /* StreamController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,8 +87,6 @@
 		FEB33292283B903300D768C6 /* AAPLEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLEAGLLayer.h; sourceTree = "<group>"; };
 		FEB33293283B903300D768C6 /* AAPLEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLEAGLLayer.m; sourceTree = "<group>"; };
 		FEB33295283B906300D768C6 /* HeaderDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderDefine.h; sourceTree = "<group>"; };
-		FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCPSocketServer.m; sourceTree = "<group>"; };
-		FEB33298283C9D0D00D768C6 /* TCPSocketServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCPSocketServer.h; sourceTree = "<group>"; };
 		FEB33299283DBC5200D768C6 /* H264Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
 		FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Decoder.swift; sourceTree = "<group>"; };
 		FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACEncoder.swift; sourceTree = "<group>"; };
@@ -109,22 +106,22 @@
 		FEBD5A16283B6AB300AE9482 /* TPVideoCallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPVideoCallUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEE12CB028F9D15D00211967 /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
 		FEE12CB228F9D16800211967 /* VideoEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEncoder.swift; sourceTree = "<group>"; };
+		FEE12CB728FC68E400211967 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FEE12CB928FC68E400211967 /* WebSocketProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		FEE12CBA28FC68E400211967 /* NativeWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
+		FEE12CBB28FC68E400211967 /* StarscreamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarscreamProvider.swift; sourceTree = "<group>"; };
+		FEE12CBC28FC68E400211967 /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
+		FEE12CBD28FC68E400211967 /* SignalingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingClient.swift; sourceTree = "<group>"; };
+		FEE12CC728FC68F100211967 /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
+		FEE12CC828FC68F100211967 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
+		FEE12CC928FC68F100211967 /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
+		FEE12CCA28FC68F100211967 /* BufferData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferData.swift; sourceTree = "<group>"; };
+		FEE12CD128FC694600211967 /* SignalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
 		FEEEB68228F6600F00D8357B /* H265Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Encoder.swift; sourceTree = "<group>"; };
 		FEEEB68428F6710700D8357B /* H265Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265Decoder.swift; sourceTree = "<group>"; };
-		FEEEB68E28F6A30600D8357B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
-		FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
-		FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarscreamProvider.swift; sourceTree = "<group>"; };
-		FEEEB69328F6A30600D8357B /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
-		FEEEB69428F6A30600D8357B /* SignalingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingClient.swift; sourceTree = "<group>"; };
-		FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
-		FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
-		FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
 		FEEEB6A528F6A5C000D8357B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = TPVideoCall/WebRTC.xcframework; sourceTree = "<group>"; };
-		FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferData.swift; sourceTree = "<group>"; };
 		FEEEB6B028F7059E00D8357B /* AACPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACPlayer.swift; sourceTree = "<group>"; };
-		FEEEB6B428F80D2300D8357B /* SignalMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalMessage.swift; sourceTree = "<group>"; };
 		FEEEB6B628F8451900D8357B /* StreamController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,8 +176,8 @@
 		FEBD59F2283B6AB000AE9482 /* TPVideoCall */ = {
 			isa = PBXGroup;
 			children = (
-				FEEEB69E28F6A4AF00D8357B /* Extensions */,
-				FEEEB68D28F6A30600D8357B /* Services */,
+				FEE12CC628FC68F100211967 /* Extensions */,
+				FEE12CB628FC68E400211967 /* Services */,
 				FEBD5A23283B6AD200AE9482 /* Lib */,
 				FEBD59F3283B6AB000AE9482 /* AppDelegate.swift */,
 				FEBD59F7283B6AB000AE9482 /* ViewController.swift */,
@@ -225,8 +222,6 @@
 				FE89E3C5283B732400A8E78C /* TPVideoCall-Bridging-Header.h */,
 				FEB3328F283B8A7A00D768C6 /* H264Decoder.h */,
 				FEB33290283B8A8D00D768C6 /* H264Decoder.m */,
-				FEB33296283C9CFA00D768C6 /* TCPSocketServer.m */,
-				FEB33298283C9D0D00D768C6 /* TCPSocketServer.h */,
 				FEB33299283DBC5200D768C6 /* H264Encoder.swift */,
 				FEB3329B283DE2BB00D768C6 /* H264Decoder.swift */,
 				FEB3329D283DFF8A00D768C6 /* AACEncoder.swift */,
@@ -239,47 +234,45 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+		FEE12CB628FC68E400211967 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEE12CB728FC68E400211967 /* Message.swift */,
+				FEE12CB828FC68E400211967 /* WebSocketProvider */,
+				FEE12CBC28FC68E400211967 /* WebRTCClient.swift */,
+				FEE12CBD28FC68E400211967 /* SignalingClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FEE12CB828FC68E400211967 /* WebSocketProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FEE12CB928FC68E400211967 /* WebSocketProvider.swift */,
+				FEE12CBA28FC68E400211967 /* NativeWebSocket.swift */,
+				FEE12CBB28FC68E400211967 /* StarscreamProvider.swift */,
+			);
+			path = WebSocketProvider;
+			sourceTree = "<group>";
+		};
+		FEE12CC628FC68F100211967 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEE12CD128FC694600211967 /* SignalMessage.swift */,
+				FEE12CC728FC68F100211967 /* RTCStates.swift */,
+				FEE12CC828FC68F100211967 /* SessionDescription.swift */,
+				FEE12CC928FC68F100211967 /* IceCandidate.swift */,
+				FEE12CCA28FC68F100211967 /* BufferData.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FEEEB68A28F6A2CD00D8357B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FEEEB6A728F6AAC700D8357B /* WebRTC.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FEEEB68D28F6A30600D8357B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				FEEEB68E28F6A30600D8357B /* Message.swift */,
-				FEEEB6B428F80D2300D8357B /* SignalMessage.swift */,
-				FEEEB68F28F6A30600D8357B /* WebSocketProvider */,
-				FEEEB69328F6A30600D8357B /* WebRTCClient.swift */,
-				FEEEB69428F6A30600D8357B /* SignalingClient.swift */,
-			);
-			name = Services;
-			path = "../../../../Downloads/WebRTC-iOS-main 4/WebRTC-Demo-App/Sources/Services";
-			sourceTree = "<group>";
-		};
-		FEEEB68F28F6A30600D8357B /* WebSocketProvider */ = {
-			isa = PBXGroup;
-			children = (
-				FEEEB69028F6A30600D8357B /* WebSocketProvider.swift */,
-				FEEEB69128F6A30600D8357B /* NativeWebSocket.swift */,
-				FEEEB69228F6A30600D8357B /* StarscreamProvider.swift */,
-			);
-			path = WebSocketProvider;
-			sourceTree = "<group>";
-		};
-		FEEEB69E28F6A4AF00D8357B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FEEEB69F28F6A4AF00D8357B /* RTCStates.swift */,
-				FEEEB6A028F6A4AF00D8357B /* SessionDescription.swift */,
-				FEEEB6A128F6A4AF00D8357B /* IceCandidate.swift */,
-				FEEEB6AE28F6FC3F00D8357B /* BufferData.swift */,
-			);
-			name = Extensions;
-			path = "../../../../Downloads/WebRTC-iOS-main 4/WebRTC-Demo-App/Sources/Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,32 +415,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB3329A283DBC5200D768C6 /* H264Encoder.swift in Sources */,
+				FEE12CC028FC68E400211967 /* WebSocketProvider.swift in Sources */,
+				FEE12CC128FC68E400211967 /* NativeWebSocket.swift in Sources */,
 				FE89E3C7283B732400A8E78C /* H264Encoder.m in Sources */,
 				FEB3329E283DFF8A00D768C6 /* AACEncoder.swift in Sources */,
-				FEB33297283C9CFA00D768C6 /* TCPSocketServer.m in Sources */,
-				FEEEB6B528F80D2300D8357B /* SignalMessage.swift in Sources */,
+				FEE12CBF28FC68E400211967 /* Message.swift in Sources */,
+				FEE12CCF28FC68F100211967 /* BufferData.swift in Sources */,
+				FEE12CC228FC68E400211967 /* StarscreamProvider.swift in Sources */,
 				FEEEB6B728F8451900D8357B /* StreamController.swift in Sources */,
-				FEEEB69628F6A30700D8357B /* WebSocketProvider.swift in Sources */,
 				FEEEB6A628F6A5C000D8357B /* Config.swift in Sources */,
-				FEEEB6A428F6A4AF00D8357B /* IceCandidate.swift in Sources */,
-				FEEEB69928F6A30700D8357B /* WebRTCClient.swift in Sources */,
+				FEE12CC328FC68E400211967 /* WebRTCClient.swift in Sources */,
 				FE5FAAF028728D44000124F5 /* DockableController.swift in Sources */,
 				FEB33294283B903300D768C6 /* AAPLEAGLLayer.m in Sources */,
 				FEBD59F8283B6AB000AE9482 /* ViewController.swift in Sources */,
-				FEEEB69728F6A30700D8357B /* NativeWebSocket.swift in Sources */,
-				FEEEB69828F6A30700D8357B /* StarscreamProvider.swift in Sources */,
 				FEEEB68328F6600F00D8357B /* H265Encoder.swift in Sources */,
-				FEEEB6A228F6A4AF00D8357B /* RTCStates.swift in Sources */,
-				FEEEB6A328F6A4AF00D8357B /* SessionDescription.swift in Sources */,
+				FEE12CC428FC68E400211967 /* SignalingClient.swift in Sources */,
 				FEBD59F4283B6AB000AE9482 /* AppDelegate.swift in Sources */,
+				FEE12CCC28FC68F100211967 /* RTCStates.swift in Sources */,
 				FEB3329C283DE2BB00D768C6 /* H264Decoder.swift in Sources */,
-				FEEEB69A28F6A30700D8357B /* SignalingClient.swift in Sources */,
-				FEEEB6AF28F6FC3F00D8357B /* BufferData.swift in Sources */,
+				FEE12CCD28FC68F100211967 /* SessionDescription.swift in Sources */,
+				FEE12CCE28FC68F100211967 /* IceCandidate.swift in Sources */,
 				FEE12CB128F9D15D00211967 /* VideoDecoder.swift in Sources */,
 				FEEEB68528F6710700D8357B /* H265Decoder.swift in Sources */,
-				FEEEB69528F6A30700D8357B /* Message.swift in Sources */,
 				FEB33291283B8A8D00D768C6 /* H264Decoder.m in Sources */,
 				FEEEB6B128F7059E00D8357B /* AACPlayer.swift in Sources */,
+				FEE12CD228FC694600211967 /* SignalMessage.swift in Sources */,
 				FEE12CB328F9D16800211967 /* VideoEncoder.swift in Sources */,
 				FEB332A1283E149D00D768C6 /* AACPlayer.m in Sources */,
 			);

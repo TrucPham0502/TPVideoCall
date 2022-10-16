@@ -249,7 +249,7 @@ extension StreamController : WebRTCClientDelegate {
     func webRTCClient(_ client: WebRTCClient, didReceiveData data: BufferData) {
         switch data.type {
         case .audio:
-             self.aacPlayer.play(data.data)
+            self.aacPlayer.play(data.data)
         case .video:
             self.videoDecoder.decoder.decode(data.data)
         default: break

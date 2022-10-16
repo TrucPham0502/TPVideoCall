@@ -9,18 +9,16 @@ import Foundation
 import AudioToolbox
 import CoreMedia
 class AACEncoder {
-    var audioConverter : AudioConverterRef?
-    var aacBuffer : UnsafeMutableRawPointer? {
-        return malloc(aacBufferSize *  MemoryLayout.size(ofValue: UInt8()))
-    }
-    var aacBufferSize : Int = 1024
-    var pcmBuffer : UnsafeMutablePointer<CChar>?
+    var audioConverter : AudioConverterRef!
+    var aacBuffer : UnsafeMutableRawPointer?
+    var aacBufferSize : UInt32 = 1024
+    var pcmBuffer : UnsafeMutablePointer<Int8>?
     var pcmBufferSize : Int = 0
     var encodeQueue = DispatchQueue(label: "audio.encode")
     var callBackQueue = DispatchQueue(label: "audio.callBack")
     var encodeCallback : ((Data)-> Void) = {_ in }
     init(){
-        memset(aacBuffer, 0, aacBufferSize);
+        aacBuffer = .allocate(byteCount: Int(aacBufferSize) * MemoryLayout<UInt32>.size, alignment: MemoryLayout<UnsafeMutableRawPointer>.alignment)
     }
     
     func setupEncoderFromSampleBuffer(sampleBuffer : CMSampleBuffer){
@@ -69,7 +67,7 @@ class AACEncoder {
             print("error getting audio format propery info: \(state)")
         }
         
-        let count =  Int(size) / MemoryLayout.size(ofValue: AudioClassDescription())
+        let count =  Int(size) / MemoryLayout.size(ofValue: audioDescription)
         
         var descriptions : [AudioClassDescription] = Array<AudioClassDescription>.init(repeating: AudioClassDescription(), count: count)
         
@@ -78,18 +76,15 @@ class AACEncoder {
             UInt32(MemoryLayout.size(ofValue: encoderSpecifier)),
             &encoderSpecifier,
             &size, 
-            UnsafeMutablePointer(mutating: descriptions))
+            &descriptions)
         
         if state1 != noErr {
             print("error getting audio format propery \(state1)")
         }
         
-        for i in 0..<count {
-            if ((kAudioFormatMPEG4AAC == descriptions[i].mSubType) &&
-                (fromManufacturer == descriptions[i].mManufacturer)) {
-                memcpy(&audioDescription , &(descriptions[i]), MemoryLayout.size(ofValue: audioDescription))
-                return audioDescription
-            }
+        if let _descriptionIdx = descriptions.firstIndex(where: { kAudioFormatMPEG4AAC == $0.mSubType &&
+            (fromManufacturer == $0.mManufacturer) }) {
+            memcpy(&audioDescription , &(descriptions[_descriptionIdx]), MemoryLayout.size(ofValue: audioDescription))
         }
         return audioDescription
     }
@@ -106,42 +101,42 @@ class AACEncoder {
             if state != noErr {
                 print("audio faile")
             }
-            memset(_self.aacBuffer, 0, _self.aacBufferSize)
             
             var outAudioBufferList : AudioBufferList = .init(mNumberBuffers: 1,
-                                                             mBuffers: .init(mNumberChannels: 1, mDataByteSize: UInt32(_self.aacBufferSize), mData: _self.aacBuffer))
+                                                             mBuffers: .init(mNumberChannels: 1, mDataByteSize: _self.aacBufferSize, mData: _self.aacBuffer))
             
-            var outPacketDescription : AudioStreamPacketDescription?
+//            let outPacketDescription : AudioStreamPacketDescription?
             var ioOutputDataPacketSize : UInt32 = 1
-            var sb =  unsafeBitCast(_self, to: UnsafeMutableRawPointer.self)
-            let status = AudioConverterFillComplexBuffer(_self.audioConverter!, { inAudioConverter, ioNumberDataPackets, ioData, outDataPacketDescription, inUserData  in
+            let sb =  unsafeBitCast(_self, to: UnsafeMutableRawPointer.self)
+            let status = AudioConverterFillComplexBuffer(_self.audioConverter, { inAudioConverter, ioNumberDataPackets, ioData, outDataPacketDescription, inUserData  in
                 
                 
-                let encoder = inUserData!.load(as: AACEncoder.self)
+                let encoder = unsafeBitCast(inUserData, to:  AACEncoder.self)
+                
                 
                 let requestedPackets = ioNumberDataPackets;
                 //                NSLog(@"Number of packets requested: %d", (unsigned int)requestedPackets);
                 let copiedSamples = encoder.pcmBufferSize
-                ioData.pointee.mBuffers.mData = encoder.pcmBuffer?.deinitialize(count: copiedSamples)
-                ioData.pointee.mBuffers.mDataByteSize = UInt32(encoder.pcmBufferSize)
+                let buffer = encoder.pcmBuffer
+                ioData.pointee.mBuffers.mData = unsafeBitCast(buffer, to: UnsafeMutableRawPointer.self)
+                ioData.pointee.mBuffers.mDataByteSize = UInt32(copiedSamples)
                 encoder.pcmBuffer = nil
                 encoder.pcmBufferSize = 0
                 if (copiedSamples < requestedPackets.pointee) {
                     //PCM Buffer Not Full
-                    ioNumberDataPackets.pointee = 0;
+                    ioNumberDataPackets.pointee = 0
                     return -1;
                 }
-                ioNumberDataPackets.pointee = 1;
                 
+                ioNumberDataPackets.pointee = UInt32(copiedSamples) / 2
                 return noErr;
                 
-            }, &sb, &ioOutputDataPacketSize, &outAudioBufferList, nil)
-            if (status == 0) {
+            }, sb , &ioOutputDataPacketSize, &outAudioBufferList, nil)
+            if (status == noErr) {
                 let rawAAC = Data(bytes: outAudioBufferList.mBuffers.mData!, count: Int(outAudioBufferList.mBuffers.mDataByteSize))
                 let adtsHeader : Data = _self.adtsDataForPacketLength(rawAAC.count)
                 let fullData = NSMutableData(data: adtsHeader)
                 fullData.append(rawAAC)
-                print(fullData)
                 _self.encodeCallback(fullData as Data)
                 
             } else {
